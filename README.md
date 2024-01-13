@@ -18,7 +18,7 @@
 ## Our Team
 - <a href="https://github.com/ZBDinev21"> Zafir Dinev (Scrum Trainer)</a> <br>
    
-- <a href="https://github.com/MEAvagyan21"> Mihail Avagnyan (Backend developer) </a><br>
+- <a href="https://github.com/MEAvagyan21"> Mikhail Avagyan (Backend developer) </a><br>
   
 - <a href="https://github.com/KDIvanov21"> Kristiyan Ivanov (Backend developer) </a><br>
   
