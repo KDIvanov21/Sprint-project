@@ -1,7 +1,8 @@
 # Sprint-project
 <h1 align="center" >Шампиони</h1>
 <br>
-</p>
+<p align="center">
+<img src="https://img.freepik.com/premium-vector/champions-trophy-logo-with-star-championship_560109-649.jpg" alt="logo" height="450" width="450"> 
 
 <br>
 ## Used technologies
