@@ -16,7 +16,7 @@
 
 ## Our Team
 
-- <a href="https://github.com/MEAvagyan21""> Mikhail Avagyan (Scrum Trainer)</a> <br>
+- <a href="https://github.com/MEAvagyan21"> Mikhail Avagyan (Scrum Trainer)</a> <br>
    
 - <a href="https://github.com/ZBDinev21"> Zafir Dinev (Backend developer) </a><br>
   
