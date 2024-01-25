@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login_style.css') }}">
+    <title>About Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: white;
+            text-align: center;
+            --gradient-start: #000000;
+            --gradient-mid: #400040;
+            --gradient-end: #800080;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            background-size: 200% 100%;
+            animation: gradientAnimation 5s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        #header {
+            text-align: right;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        #login, #register {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            background: #858383;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        #login:hover, #register:hover {
+            background: #555;
+        }
+
+        #github-link {
+            color: #6d6d6d;
+            margin-top: 80px;
+            font-size: 14px;
+        }
+
+        h1, p {
+            color: white;
+            margin-top: 40px;
+        }
+        
+        #project-info {
+            text-align: left;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #000000;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        #project-info h2 {
+            color: #841fd6fa;
+            margin-bottom: 1px;
+        }
+
+        #project-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #project-info li {
+            margin-bottom: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <a href="{{ url_for('login') }}" id="login" class="login-btn">Login</a>
+        <a href="{{ url_for('register') }}" id="register" class="register-btn">Registration</a>
+    </div>
+
+    <a href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='img/p.png') }}" alt="Back to Main" style="position: fixed; top: 10px; left: 10px; width: 30px; height: 30px;">
+    </a>
+
+    <h1>My Digital Will</h1>
+
+    <div id="project-info">
+        <h2>Welcome to the My Digital Will Project</h2>
+        <p>My Digital Will is an innovative project that allows users to create and manage their digital wills.
+            In today's digital age, we accumulate a significant amount of personal data and assets online,
+            ranging from social media accounts to digital documents. My Digital Will empowers users to plan for
+            the future of their digital presence, ensuring that their online legacy is handled according to their wishes.
+        </p>
+
+        <h2>About the Project</h2>
+        <ul>
+            <li><strong>User Registration:</strong> Securely register and create an account on the platform.
+                Safeguard your personal information with our robust authentication system.</li>
+            <li><strong>Profile Management:</strong> Easily manage your profile details, including contact information.
+                Keep your information up-to-date for accurate digital inheritance.</li>
+            <li><strong>Digital Will Creation:</strong> Intuitively compose and organize your digital will with ease.
+                Specify your preferences for the management of social media accounts, emails, and other digital assets.</li>
+            <li><strong>Multiple Wills:</strong> Create multiple digital wills to address different aspects of your online presence.
+                Tailor each will to reflect your diverse wishes and concerns.</li>
+            <li><strong>Will Repository:</strong> Access a centralized repository for storing and updating your digital wills.
+                Retrieve, modify, or delete your wills as needed.</li>
+            <li><strong>Legacy Planning:</strong> Plan ahead for the fate of your online accounts, ensuring a smooth transition for your loved ones.
+                Specify instructions for data deletion, account transfers, or memorialization.</li>
+            <li><strong>Security Measures:</strong> Benefit from advanced security features to protect your sensitive information.
+                Utilize encryption and secure data storage for peace of mind.</li>
+        </ul>
+        <h2>Get Started</h2>
+        <p>Join My Digital Will today and take control of your digital legacy. Whether it's preserving memories, securing important information,
+            or designating account management, our platform provides the tools to navigate the complexities of the digital afterlife.</p>
+        <p>Plan today for a digital tomorrow with My Digital Will.</p>
+    </div>
+
+    <a href="https://github.com/KDIvanov21/Sprint-project" id="github-link" target="_blank">Visit our GitHub repository</a>
+</body>
+</html>
