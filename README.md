@@ -17,9 +17,9 @@
 - <img src="https://seeklogo.com/images/G/github-logo-2E3852456C-seeklogo.com.png" width="25" height="25"> GitHub <br>
 
 ## Our Team
-- <a href="https://github.com/ZBDinev21"> Zafir Dinev (Scrum Trainer)</a> <br>
+- <a href="https://github.com/ZBDinev21"> Mikhail Avagyan (Scrum Trainer)</a> <br>
    
-- <a href="https://github.com/MEAvagyan21"> Mikhail Avagyan (Backend developer) </a><br>
+- <a href="https://github.com/MEAvagyan21"> Zafir Dinev (Backend developer) </a><br>
   
 - <a href="https://github.com/KDIvanov21"> Kristiyan Ivanov (Backend developer) </a><br>
   
