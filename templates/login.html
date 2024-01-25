@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #000000, #800080);
+            background-size: 200% 100%;
+            animation: gradientAnimation 5s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        form {
+            font-family: Calibri, Arial, sans-serif;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        img.back-to-main {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            width: 30px;
+            height: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #4caf50;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        p.error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .register-link {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .register-link a {
+            color: #4caf50;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .register-link a:hover {
+            color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='img/p.png') }}" alt="Back to Main" class="back-to-main">
+    </a>
+
+    <form action="{{ url_for('login') }}" method="POST">
+        <h2>Login</h2>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+
+        <p class="register-link">Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+    </form>
+</body>
+</html>
