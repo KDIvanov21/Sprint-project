@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-USERS_FILE = 'data/users.json'
+USERS_FILE = 'Sprint-project-main/data/users.json'
 
 if not os.path.exists(USERS_FILE):
     with open(USERS_FILE, 'w') as f:
