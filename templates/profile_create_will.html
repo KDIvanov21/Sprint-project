@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Will</title>
+    <style>
+        body {
+            font-family: Calibri, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #000000, #800080);
+            background-size: 200% 100%;
+            animation: gradientAnimationBody 5s ease infinite;
+        }
+
+        @keyframes gradientAnimationBody {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1, h2, a {
+            font-family: Calibri, Arial, sans-serif;
+            background-color: white;
+            padding: 10px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        form {
+            font-family: Calibri, Arial, sans-serif;
+            margin-top: 20px;
+            width: 80%;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 12px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        button {
+            background: #4caf50;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 7px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+        }
+
+        li:hover {
+            background-color: #f2f2f2;
+        }
+
+        li span {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        a {
+            color: #6d6d6d;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        a:hover {
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='img/p.png') }}" alt="Back to Main" style="position: fixed; top: 10px; left: 10px; width: 30px; height: 30px;">
+    </a>
+
+    <h1>Create Will</h1>
+
+    <form id="createWillForm" action="{{ url_for('profile_create_will') }}" method="POST">
+        <textarea id="will-text" name="will-text" rows="4" required></textarea>
+        <br>
+        <button type="submit">Make new will</button>
+    </form>
+
+    <h2>Your Wills:</h2>
+    <ul id="wills-list">
+        {% for will in user.wills %}
+            <li><span>{{ will }}</span></li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById('createWillForm');
+            const willText = document.getElementById('will-text');
+            const willsList = document.getElementById('wills-list');
+
+            function updateWillsList() {
+                fetch('{{ url_for("profile_create_will") }}', {
+                    method: 'GET',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    willsList.innerHTML = '';
+                    data.user.wills.forEach(will => {
+                        const li = document.createElement('li');
+                        li.innerHTML = '<span>' + will + '</span>';
+                        willsList.appendChild(li);
+                    });
+                });
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                fetch('{{ url_for("profile_create_will") }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 'will-text': willText.value }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const li = document.createElement('li');
+                    li.innerHTML = '<span>' + data.will + '</span>';
+                    willsList.appendChild(li);
+                    willText.value = '';
+                });
+            });
+
+            updateWillsList();
+            setInterval(updateWillsList, 5000);
+        });
+    </script>
+
+</body>
+</html>
