@@ -11,7 +11,7 @@
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" width="25" height="25"> Visual Studio Code <br>
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Microsoft_Word_2013-2019_logo.svg/587px-Microsoft_Word_2013-2019_logo.svg.png?20221202081051" width="25" height="25"> Microsoft Word <br>
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg/640px-Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg.png" width="25" height="25"> Microsoft PowerPoint <br>
-- <img src="https://o.remove.bg/downloads/41f55e7d-adc9-4525-bc60-dfd9fff235fc/mi462me99-microsoft-teams-logo-microsoft-teams-removebg-preview.png" width="25" height="25"> Microsoft Teams <br>
+- <img src="https://www.utoledo.edu/it/office365/images/Teams2020.png" width="25" height="25"> Microsoft Teams <br>
 - <img src="https://seeklogo.com/images/G/github-logo-2E3852456C-seeklogo.com.png" width="25" height="25"> GitHub <br>
 
 ## Our Team
